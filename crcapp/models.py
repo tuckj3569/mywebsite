@@ -25,6 +25,9 @@ class Orders(models.Model):
 	Order_PickupDate = models.CharField(max_length=10, blank=True)
 	Order_PickupStore = models.CharField(max_length=10, blank=True)
 	Order_Return_Store = models.CharField(max_length=10, blank=True)
+	
+	class Meta:
+		verbose_name_plural = "Orders"
 
 class Store(models.Model):	
 	Store_Name = models.CharField(max_length=10, blank=True)
