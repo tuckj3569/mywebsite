@@ -19,6 +19,6 @@ from crcapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	re_path(r'^$',views.home),
-	re_path(r'^cars/(?P<id>\d)/$', views.car_details)
+	re_path(r'^$',views.home, name ='home'),
+	re_path(r'^cars/(\d+)/', views.car_details, name= 'car_details'),
 ]

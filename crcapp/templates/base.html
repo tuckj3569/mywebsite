@@ -1,0 +1,93 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - Car Rental Company</title>
+        <link rel="stylesheet" id="ample-style-css" href="{% static 'style.css' %}" type="text/css" media="all">
+		<style>
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+#page {
+	margin-left: 25%;
+}
+</style>
+    </head>
+    <body class="wide">
+	<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+        <div id="page" class="hfeed">
+            <header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                            <a href="/">
+                                <img src="{% static '/images/logo.png' %}" alt="Car Rental Company">
+                            </a>
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="/" title="Car Rental Company" rel="home">Car Rental Company</a>
+                            </h1>
+                            <p>rent from us because we can get you a great deal.</p>
+                        </div>
+                    </div>
+                    <img src="{% static '/images/header.jpg' %}" alt="Car Rental Company">
+                </div>
+            </header>
+            <div class="main-wrapper">
+                <div class="single-page clearfix">
+                    <div class="inner-wrap">
+                        <p>Car Rental Company strives to blend the best in traditional and alternative cars in the lease and rental of good conditions vehicles including 
+						Premium SUV, SUC, Family cars, Premium Family Wagons, and economical budget deals.
+						We employ the latest technology, along with the wisdom garnered in the driving cars all over the world, to find the safest and most effective vehicle for you 
+						</p>
+                        <hr>
+                        <div>
+                        {% block content %}
+						{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="colophon">
+                <div class="inner-wrap">
+                    Car Rental Company is for a QUT assesment. Any resemblance to real brands, products, or people is purely coincidental.
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

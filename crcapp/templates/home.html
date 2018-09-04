@@ -1,1 +1,15 @@
-home.html
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+	{% for car in cars %}
+		<div class= "carID">
+			<a href="{% url 'car_details' car.Car_ID %}">
+			<h3>{{car.Car_MakeName}} {{car.Car_Model}}</h3>
+				</a>
+
+				<p>this car is a {{ car.Car_BodyType}}</p>
+			</
+	{% endfor %}
+</div>
+{% endblock %}
